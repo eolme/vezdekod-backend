@@ -15,6 +15,14 @@ go run . --mode=api
 - `/` - пользовательский интерфейс
 - `/admin` - панель администрации
 
+## Бинарники
+
+```bash
+./main-linux
+
+./main-darwin
+```
+
 ## Seed
 
 ```bash
