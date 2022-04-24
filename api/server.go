@@ -2,6 +2,7 @@ package api
 
 import (
 	log "log"
+	"os"
 
 	fiber "github.com/gofiber/fiber/v2"
 	basicauth "github.com/gofiber/fiber/v2/middleware/basicauth"
@@ -38,5 +39,9 @@ func Server() {
 		router.Post("/meme/:id/:prio", SetMemePrio)
 	})
 
-	log.Fatal(app.Listen(":3000"))
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "3000"
+	}
+	log.Fatal(app.Listen(":" + port))
 }
